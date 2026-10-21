@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myshophanivia.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+
+    <!-- PASTIKAN checkoutFragment MEMILIKI TAG ACTION KE addressFragment -->
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.example.myshophanivia.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout">
+
+        <argument
+            android:name="productName"
+            app:argType="string" />
+
+        <!-- TAG ACTION INI YANG MENGHASILKAN 'CheckoutFragmentDirections' -->
+        <action
+            android:id="@+id/action_checkoutFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.example.myshophanivia.AddressFragment"
+        android:label="fragment_address"
+        tools:layout="@layout/fragment_address" />
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.myshophanivia.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myshophanivia.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
