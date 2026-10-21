@@ -26,6 +26,6 @@
         android:id="@+id/btn_buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Beli Sekarang"/>
+        android:text="Belii Sekarang"/>
 
 </LinearLayout>
